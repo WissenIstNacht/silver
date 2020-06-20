@@ -19,3 +19,6 @@ jobs:
       run: sbt compile
     - name: Run Tests
       run: sbt test
+    - name: print directory
+      run: pwd > last_file.txt | ls >> print_dir.txt | cat print_dir.txt
+      
