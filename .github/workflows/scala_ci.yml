@@ -19,8 +19,8 @@ jobs:
       with:
         java-version: 1.8
         
-    - name: Assebmble project  
-      run: sbt assembly
+#     - name: Assebmble project  
+#       run: sbt assembly
       
     - name: cache assembled JAR
       uses: actions/cache@v2
