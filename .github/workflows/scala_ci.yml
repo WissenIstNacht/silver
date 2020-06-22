@@ -25,10 +25,10 @@ jobs:
     - name: cache assembled JAR
       uses: actions/cache@v2
       with: 
-        key: ${{ runner.os }}-silver-assembly
         path: ./target
-
-    - name: Install Dependencies
+        key: ${{ runner.os }}-silver-assembly
+        
+    - name: check Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: echo "did not hit cache (yet?)."
       
