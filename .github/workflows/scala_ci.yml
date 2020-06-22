@@ -19,14 +19,14 @@ jobs:
       with:
         java-version: 1.8
         
-#     - name: Assebmble project  
-#       run: sbt assembly
+    - name: Assebmble project  
+      run: sbt assembly
       
     - name: cache assembled JAR
       uses: actions/cache@v2
       with: 
         path: ./target
-        key: ${{ runner.os }}-silver-assembly
+        key: ${{ runner.os }}-silver-assembly1
         
     - name: check Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
