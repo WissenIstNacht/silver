@@ -19,8 +19,8 @@ jobs:
       with:
         java-version: 1.8
         
-    - name: Assebmble project  
-      run: sbt assembly
+#     - name: Assebmble project  
+#       run: sbt assembly
       
     - name: cache assembled JAR
       uses: actions/cache@v2
@@ -28,12 +28,12 @@ jobs:
         path: ./target
         key: ${{ runner.os }}-silver-assembly1
         
-    - name: check Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: echo "did not hit cache (yet?)."
+#     - name: check Dependencies
+#       if: steps.cache.outputs.cache-hit != 'true'
+#       run: echo "did not hit cache (yet?)."
       
-#     - name: Run Tests
-#       run: sbt test
+    - name: Run Tests
+      run: sbt test
 
     - name: print directory
       run: pwd > print_dir.txt | ls >> print_dir.txt | cat print_dir.txt
